@@ -23,6 +23,8 @@ class EventHandler(tcod.event.EventDispatch[Action]):
         elif key == tcod.event.K_RIGHT:
             action = MovementAction(dx=1, dy=0)
 
+        if key == tcod.event.K_ESCAPE:
+            action = EscapeAction()
+
         # No valid key was pressed
         return action
-
